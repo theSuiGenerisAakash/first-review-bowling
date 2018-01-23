@@ -5,36 +5,37 @@ const verifyNum = num => (typeof num === 'number' ? (num % 1 === 0) : false);
 const verify = arr => (verifyArray(arr) ? arr.every(num => verifyNum(num)) : false);
 
 const score = (allThrows) => {
-  if (verify(allThrows) === false) {
-    return false;
-  }
-  const len = allThrows.length;
-  let curr = 1;
-  let prev = 0;
   let scoreSum = 0;
-  let lastSum = 0;
-  for (; prev < len - 2;) {
-    if (allThrows[prev] === 10) {
-      lastSum = 10 + allThrows[curr] + allThrows[curr + 1];
-      scoreSum += lastSum;
-      curr += 2;
-      prev += 1;
-    } else if (allThrows[curr] + allThrows[prev] < 10) {
-      lastSum = allThrows[curr] + allThrows[prev];
-      scoreSum += lastSum;
-      curr += 2;
-      prev += 2;
-    } else if (allThrows[curr] + allThrows[prev] === 10) {
-      lastSum = 10 + allThrows[curr + 1];
-      scoreSum += lastSum;
-      curr += 2;
-      prev += 2;
+  if (verify(allThrows) === true) {
+    const len = allThrows.length;
+    let curr = 1;
+    let prev = 0;
+    let noOfFrames = 0;
+
+    for (; prev < len - 2;) {
+      if (allThrows[prev] === 10) {
+        scoreSum += 10 + allThrows[curr] + allThrows[curr + 1];
+        prev += 1;
+      } else if (allThrows[curr] + allThrows[prev] < 10) {
+        scoreSum += allThrows[curr] + allThrows[prev];
+        prev += 2;
+        curr = prev + 1;
+      } else if (allThrows[curr] + allThrows[prev] === 10) {
+        scoreSum += 10 + allThrows[curr + 1];
+        prev += 2;
+        curr = prev + 1;
+      }
+      curr = prev + 1;
+      noOfFrames += 1;
+    }
+    if (noOfFrames !== 10 && len - prev === 2) {
+      scoreSum += allThrows[curr] + allThrows[prev];
     }
   }
-  scoreSum += allThrows[curr] + allThrows[prev];
   return scoreSum;
 };
 
+score([4, 6, 3, 6, 3, 6, 4, 6, 3, 6, 10, 3, 6, 3, 6, 3, 6, 5, 5, 3]);
 module.exports = {
   verifyArray, verifyNum, score,
 };
