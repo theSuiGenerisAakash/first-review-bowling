@@ -91,9 +91,13 @@ describe('testing score function', () => {
 });
 
 describe('testing output type', () => {
-  it('testing output for a valid array', () => {
+  it('testing output for a valid array - 1', () => {
     const arrSum = [3, 6, 10, 10, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 10, 3, 6];
     const result = bowling.score(arrSum);
     expect(typeof result === 'number' && !Number.isNaN(result)).toBe(true);
+  });
+  it('testing output for a valid array - 2', () => {
+    const arrSum = [3, 6, 10, 10, undefined, 6, 3, 6, 3, null, 3, 6, 3, 6, 10, 3, 6];
+    expect(bowling.score(arrSum)).toBe(0);
   });
 });

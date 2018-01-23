@@ -35,7 +35,7 @@ const score = (allThrows) => {
   return scoreSum;
 };
 
-score([4, 6, 3, 6, 3, 6, 4, 6, 3, 6, 10, 3, 6, 3, 6, 3, 6, 5, 5, 3]);
+score([3, 6, 10, 10, undefined, 6, 3, 6, 3, null, 3, 6, 3, 6, 10, 3, 6]);
 module.exports = {
   verifyArray, verifyNum, score,
 };
