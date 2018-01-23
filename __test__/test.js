@@ -66,5 +66,9 @@ describe('testing input of valid inputs', () => {
       const arrSum = [3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 10, 3, 6];
       expect(bowling.score(arrSum)).toBe(100);
     });
+    it('test 2', () => {
+      const arrSum = [3, 6, 10, 10, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 10, 3, 6];
+      expect(bowling.score(arrSum)).toBe(124);
+    });
   });
 });
