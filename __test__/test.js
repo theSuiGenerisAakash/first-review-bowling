@@ -66,13 +66,17 @@ describe('testing input of valid inputs', () => {
       const arrSum = [3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 10, 3, 6];
       expect(bowling.score(arrSum)).toBe(100);
     });
-    it('test 2', () => {
+    it('test 3', () => {
       const arrSum = [3, 6, 10, 10, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 10, 3, 6];
       expect(bowling.score(arrSum)).toBe(124);
     });
-    it('test 2', () => {
+    it('test 4', () => {
       const arrSum = [10, 10, 10, 10, 10, 10, 10, 10, 10, 2, 8, 10];
       expect(bowling.score(arrSum)).toBe(272);
+    });
+    it('test 5', () => {
+      const arrSum = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+      expect(bowling.score(arrSum)).toBe(0);
     });
   });
 });
