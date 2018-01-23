@@ -58,6 +58,7 @@ describe('testing input of valid inputs', () => {
     });
   });
 });
+
 describe('testing score function', () => {
   it('test 1', () => {
     const arrSum = [3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6];
@@ -86,5 +87,13 @@ describe('testing score function', () => {
   it('test 7', () => {
     const arrSum = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10];
     expect(bowling.score(arrSum)).toBe(300);
+  });
+});
+
+describe('testing output type', () => {
+  it('testing output for a valid array', () => {
+    const arrSum = [3, 6, 10, 10, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 10, 3, 6];
+    const result = bowling.score(arrSum);
+    expect(typeof result === 'number' && !Number.isNaN(result)).toBe(true);
   });
 });
