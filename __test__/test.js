@@ -31,4 +31,30 @@ describe('testing input of valid inputs', () => {
       expect(bowling.verifyArray(arrTest)).toBe(false);
     });
   });
+  describe('testing if the elements are number', () => {
+    it('testing with a valid number', () => {
+      const numTest = 22;
+      expect(bowling.verifyNum(numTest)).toBe(true);
+    });
+    it('testing with undefined', () => {
+      const numTest = undefined;
+      expect(bowling.verifyNum(numTest)).toBe(false);
+    });
+    it('testing with null', () => {
+      const numTest = null;
+      expect(bowling.verifyNum(numTest)).toBe(false);
+    });
+    it('testing with a string', () => {
+      const numTest = '22';
+      expect(bowling.verifyNum(numTest)).toBe(false);
+    });
+    it('testing with float', () => {
+      const numTest = 32.3;
+      expect(bowling.verifyNum(numTest)).toBe(false);
+    });
+    it('testing with an object', () => {
+      const numTest = {};
+      expect(bowling.verifyNum(numTest)).toBe(false);
+    });
+  });
 });
