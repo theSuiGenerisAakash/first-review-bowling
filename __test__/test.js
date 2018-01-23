@@ -57,4 +57,10 @@ describe('testing input of valid inputs', () => {
       expect(bowling.verifyNum(numTest)).toBe(false);
     });
   });
+  describe('testing score function', () => {
+    it('test 1', () => {
+      const arrSum = [3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6];
+      expect(bowling.score(arrSum)).toBe(90);
+    });
+  });
 });
