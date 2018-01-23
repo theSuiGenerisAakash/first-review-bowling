@@ -1,0 +1,24 @@
+{
+  "name": "first-review-bowling",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "coverage": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theSuiGenerisAakash/first-review-bowling.git"
+  },
+  "author": "Aakash Verma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theSuiGenerisAakash/first-review-bowling/issues"
+  },
+  "homepage": "https://github.com/theSuiGenerisAakash/first-review-bowling#readme",
+  "devDependencies": {
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0"
+  }
+}
