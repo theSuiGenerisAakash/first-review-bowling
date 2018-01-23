@@ -57,34 +57,34 @@ describe('testing input of valid inputs', () => {
       expect(bowling.verifyNum(numTest)).toBe(false);
     });
   });
-  describe('testing score function', () => {
-    it('test 1', () => {
-      const arrSum = [3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6];
-      expect(bowling.score(arrSum)).toBe(90);
-    });
-    it('test 2', () => {
-      const arrSum = [3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 10, 3, 6];
-      expect(bowling.score(arrSum)).toBe(100);
-    });
-    it('test 3', () => {
-      const arrSum = [3, 6, 10, 10, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 10, 3, 6];
-      expect(bowling.score(arrSum)).toBe(124);
-    });
-    it('test 4', () => {
-      const arrSum = [10, 10, 10, 10, 10, 10, 10, 10, 10, 2, 8, 10];
-      expect(bowling.score(arrSum)).toBe(272);
-    });
-    it('test 5', () => {
-      const arrSum = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-      expect(bowling.score(arrSum)).toBe(0);
-    });
-    it('test 6', () => {
-      const arrSum = [2, 8, 8, 2, 3, 7, 7, 3, 4, 6, 5, 5, 5, 5, 6, 2, 10, 5, 5, 10];
-      expect(bowling.score(arrSum)).toBe(156);
-    });
-    it('test 7', () => {
-      const arrSum = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10];
-      expect(bowling.score(arrSum)).toBe(300);
-    });
+});
+describe('testing score function', () => {
+  it('test 1', () => {
+    const arrSum = [3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6];
+    expect(bowling.score(arrSum)).toBe(90);
+  });
+  it('test 2', () => {
+    const arrSum = [3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 10, 3, 6];
+    expect(bowling.score(arrSum)).toBe(100);
+  });
+  it('test 3', () => {
+    const arrSum = [3, 6, 10, 10, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 10, 3, 6];
+    expect(bowling.score(arrSum)).toBe(124);
+  });
+  it('test 4', () => {
+    const arrSum = [10, 10, 10, 10, 10, 10, 10, 10, 10, 2, 8, 10];
+    expect(bowling.score(arrSum)).toBe(272);
+  });
+  it('test 5', () => {
+    const arrSum = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    expect(bowling.score(arrSum)).toBe(0);
+  });
+  it('test 6', () => {
+    const arrSum = [2, 8, 8, 2, 3, 7, 7, 3, 4, 6, 5, 5, 5, 5, 6, 2, 10, 5, 5, 10];
+    expect(bowling.score(arrSum)).toBe(156);
+  });
+  it('test 7', () => {
+    const arrSum = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10];
+    expect(bowling.score(arrSum)).toBe(300);
   });
 });
